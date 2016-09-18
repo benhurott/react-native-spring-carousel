@@ -136,7 +136,7 @@ var carousel = React.createClass({
           currentPage++;
         }else if(gestureState.dx <-50){
           currentPage--;
-        }else{
+        }/*else{
           var realCurrentPage = (currentPage*-1 +1) % (this.props.children.length+1);
           if(realCurrentPage==0){
             realCurrentPage=1
@@ -145,7 +145,7 @@ var carousel = React.createClass({
             this.onPressSlide(realCurrentPage);
           }
 
-        }
+        }*/
     }
     this.movePage(currentPage);
   },
@@ -159,6 +159,7 @@ var carousel = React.createClass({
       this._currentPage =1;
     }
     this.setState({currentPage:this._currentPage});
+    this.onPressSlide(this._currentPage);
   },
 
   getPager() {
